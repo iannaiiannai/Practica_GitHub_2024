@@ -46,10 +46,10 @@ for file in os.listdir("recordings/"):
         confidence_score = prediction[0][index]
 
         # Imprime la predicción y el puntaje de confianza
-        if "OSCURIDAD" in class_name[2:]:
+        if "Pintura & No Luz" in class_name[2:]:
             print(f"[PREDICCIÓN] En la grabación {file}, el museo está en modo {class_name[2:]}")
             print(f"[CONFIANZA] Estoy seguro con un {round(confidence_score * 100, 3)}% de certeza.")
 
-        elif "NO PINTURA" in class_name[2:]:
+        elif "No Pintura & Si Luz" in class_name[2:]:
             print(f"[PREDICCIÓN] En la grabación {file}, el museo tiene {class_name[2:]}")
             print(f"[CONFIANZA] Estoy seguro con un {round(confidence_score * 100, 3)}% de certeza.")
